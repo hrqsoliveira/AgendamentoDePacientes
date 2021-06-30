@@ -1,0 +1,29 @@
+﻿@model AP.UI.Application.Models.AgendamentoViewModel
+
+<div class="row d-flex justify-content-center p-4">
+    <div class="col-xl-12">
+        <table class="table table-sm template-fundo-tabela table-borderless mt-4">
+            <thead class="template-head-tabela text-white">
+                <tr>
+                    <th scope="col">Nome do Paciente</th>
+                    <th scope="col">Médico</th>
+                    <th scope="col">Data e Hora</th>
+                    <th class="text-center" scope="col">Editar</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var agenda in Model.Agendas)
+                {
+                    <tr>
+                        <td>@agenda.Paciente.Nome</td>
+                        <td>@agenda.Medico.Nome</td>
+                        <td>@agenda.DataHoraDoAgendamento</td>
+                        <td class="text-center">
+                            <a class="cor-botao-editar" asp-action="Edicao" asp-controller="Agendamentos" asp-route-id="@agenda.Id"><i class="fa fa-edit"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

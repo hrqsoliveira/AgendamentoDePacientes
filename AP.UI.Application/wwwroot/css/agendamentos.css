@@ -1,0 +1,42 @@
+﻿body{
+    background-color: white;
+}
+
+.ajusta-alinhamento-botao{
+    margin-top: 33px;
+}
+
+.template-container {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    height: 700px;
+}
+
+.template-head-tabela {
+    background-color: #005b94
+}
+
+.template-fundo-tabela {
+    background-color: white;
+    border-radius: 3px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.template-header {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 1px 3px;
+    background-color: #005b94;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.cor-botao-salvar {
+    background-color: #005b94;
+}
+
+.cor-botao-editar {
+    color: #005b94;
+}
+
+.cor-botao-excluir {
+    color: red;
+}

@@ -1,0 +1,67 @@
+﻿@model AP.UI.Application.Models.AgendamentoViewModel
+
+@{
+    ViewData["Title"] = "Agendamentos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container template-container mt-5 p-0">
+    <form asp-action="Editar" asp-controller="Agendamentos" method="post">
+        <div class="p-1 template-header"></div>
+        <div class="row d-flex justify-content-center">
+            <h2 class="font-weight-bold text-uppercase mt-5">Agendamentos</h2>
+        </div>
+        <div class="row d-flex justify-content-center mt-5 ml-1">
+            <div class="col-xl-4 col-sm-8">
+                <label>Nome do Paciente</label>
+                <input asp-for="@Model.Agenda.Paciente.Nome" class="form-control" disabled />
+            </div>
+            <div class="col-xl-3 col-sm-8">
+                <label>Médico</label>
+                <select asp-for="@Model.Agenda.Medico.Id" asp-items="@(new SelectList(Model.Medicos, "Id", "Nome"))" class="form-control"><option selected value="">Selecione</option></select>
+            </div>
+            <div class="col-xl-3 col-sm-8">
+                <label>Data e Hora</label>
+                <input asp-for="@Model.Agenda.DataHoraDoAgendamento" class="form-control" type="datetime-local" />
+            </div>
+            <div class="col-xl-2 col-sm-8">
+                <input asp-for="@Model.Agenda.Id" hidden />
+                <input asp-for="@Model.Agenda.Paciente.Id" hidden/>
+                <a asp-action="Index" asp-controller="Agendamentos" class="btn btn-secondary ajusta-alinhamento-botao text-white">Voltar</a>
+                <button class="btn ajusta-alinhamento-botao cor-botao-salvar text-white">Editar</button>
+            </div>
+        </div>
+    </form>
+    <div class="row d-flex justify-content-center p-4">
+        <div class="col-xl-12">
+            <table class="table table-sm template-fundo-tabela table-borderless mt-4">
+                <thead class="template-head-tabela text-white">
+                    <tr>
+                        <th scope="col">Nome do Paciente</th>
+                        <th scope="col">Médico</th>
+                        <th scope="col">Data e Hora</th>
+                        <th class="text-center" scope="col">Excluir</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tbody>
+                    <tr>
+                        <td>@Model.Agenda.Paciente.Nome</td>
+                        <td>@Model.Agenda.Medico.Nome</td>
+                        <td>@Model.Agenda.DataHoraDoAgendamento</td>
+                        <td class="text-center">
+                            <a class="cor-botao-excluir" asp-action="Excluir" asp-controller="Agendamentos" asp-route-id="@Model.Agenda.Id"><i class="fa fa-trash"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{
+    @{ await Html.RenderPartialAsync("_ValidationScriptsAgendamentos"); }
+}
+
+

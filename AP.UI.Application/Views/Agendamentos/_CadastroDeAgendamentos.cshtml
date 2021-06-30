@@ -1,0 +1,25 @@
+﻿@model AP.UI.Application.Models.AgendamentoViewModel
+
+    <form asp-action="Salvar" asp-controller="Agendamentos" method="post">
+        <div class="p-1 template-header"></div>
+        <div class="row d-flex justify-content-center">
+            <h2 class="font-weight-bold text-uppercase mt-5">Agendamentos</h2>
+        </div>
+        <div class="row d-flex justify-content-center mt-5">
+            <div class="col-xl-4 col-sm-8">
+                <label>Nome do Paciente</label>
+                <input asp-for="@Model.Agenda.Paciente.Nome" class="form-control" required/>
+            </div>
+            <div class="col-xl-3 col-sm-8">
+                <label>Médico</label>
+                <select asp-for="@Model.Agenda.Medico.Id" asp-items="@(new SelectList(Model.Medicos, "Id", "Nome"))" class="form-control" required><option selected value="">Selecione</option></select>
+            </div>
+            <div class="col-xl-3 col-sm-8">
+                <label>Data e Hora</label>
+                <input asp-for="@Model.Agenda.DataHoraDoAgendamento" class="form-control" type="datetime-local" required/>
+            </div>
+            <div class="col-xl-1  col-sm-8">
+                <button class="btn ajusta-alinhamento-botao cor-botao-salvar text-white">Salvar</button>
+            </div>
+        </div>
+    </form>
