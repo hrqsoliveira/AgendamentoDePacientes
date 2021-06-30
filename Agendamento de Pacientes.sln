@@ -15,6 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - I
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{901379A0-7F05-4147-9B01-6D37570CF18B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Banco de Dados (Script)", "4 - Banco de Dados (Script)", "{8A6E7A85-349B-4415-87AA-D7180C9A64A6}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Users\tecnologia9\Desktop\Agendamento de Pacientes\Banco de Dados\SQL_AgendamentoDePacientes.sql = ..\..\..\Users\tecnologia9\Desktop\Agendamento de Pacientes\Banco de Dados\SQL_AgendamentoDePacientes.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
