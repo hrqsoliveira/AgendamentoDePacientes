@@ -14,6 +14,7 @@ namespace AP.Infrastructure.Factories
                 Domain.Enums.TipoDoBanco.MSSQL => new MsSqlDbAgenda(configuracoes),
                 Domain.Enums.TipoDoBanco.ORACLE or Domain.Enums.TipoDoBanco.ANOTHER => throw new NotImplementedException("Este banco de dados não foi implementado"),
                 _ => throw new InvalidOperationException("Este banco de dados não existe ou está incorreto"),
+
             };
         }
     }
